@@ -6,15 +6,21 @@ export const AppContext = createContext();
 
 export default function AppContextProvider ({children}){
 
-    const MainUrl = "https://codehelp-apis.vercel.app/api/get-blogs?page=1";
+    const MainUrl = "https://codehelp-apis.vercel.app/api/get-blogs";
 
     const [blogs, setBlogs] = useState([]);
     const [page, setPage] =useState(1);
     const [totalPages, setTotalPages] = useState(null);
 
-    async function fetchBlog (page){
+    async function fetchBlog (page, tag=null, category){
 
         let url = `${MainUrl}?page=${page}`;
+        if(tag){
+            url = `${url}&tag=${tag}`;
+        }
+        if(category){
+            url = `${url}&category=${category}`;
+        }
 
         try {
             const res = await fetch(url);
@@ -35,8 +41,7 @@ export default function AppContextProvider ({children}){
     function changeHandler(page){
         setPage(page);
         fetchBlog(page);
-    }
-
+    };
 
     const value = {
         blogs,
