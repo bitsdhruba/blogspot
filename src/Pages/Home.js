@@ -1,5 +1,6 @@
 
 import Blogs from '../Components/Blogs';
+import Pagination from '../Components/Pagination';
 
 
 function Home() {
@@ -7,9 +8,12 @@ function Home() {
   
   return (
     <div>
-      <Blogs/>
+      <Blogs />
+      <footer>
+        <Pagination />
+      </footer>
     </div>
-  )
+  );
 }
 
 export default Home;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BlogDetail from '../Components/BlogDetail';
 import { useLocation } from 'react-router-dom';
+import Pagination from '../Components/Pagination';
 
 function BlogPage() {
   
@@ -36,13 +37,13 @@ function BlogPage() {
     <div>
       <div>
         {blog ? (
-          <div>
-            <BlogDetail blog={blog} />
-            <h1>Related Blogs</h1>
-            {relatedBlogs.map((blog) => {
-              return <BlogDetail blog={blog} key={blog.id}/>;
-            })}
-          </div>
+            <div>
+              <BlogDetail blog={blog} />
+              <h1>Related Blogs</h1>
+              {relatedBlogs.map((blog) => {
+                return <BlogDetail blog={blog} key={blog.id} />;
+              })}
+            </div>
         ) : (
           <div>
             <p>No Blogs Found</p>

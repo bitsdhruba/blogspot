@@ -43,9 +43,7 @@ function App() {
         <Route path="/category/:category" element={<Category />} />
         <Route path="/tag/:tag" element={<Tag />} />
       </Routes>
-      <footer>
-        <Pagination />
-      </footer>
+
     </div>
   );
 }

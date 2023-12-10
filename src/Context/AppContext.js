@@ -40,6 +40,7 @@ export default function AppContextProvider ({children}){
         
         navigate({search : `?page=${page}`});
         setPage(page);
+
     };
 
     const value = {

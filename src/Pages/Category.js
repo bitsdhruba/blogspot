@@ -1,6 +1,7 @@
 import React from 'react'
 import Blogs from '../Components/Blogs'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom';
+import Pagination from '../Components/Pagination';
 
 function Category() {
 
@@ -19,6 +20,7 @@ function Category() {
         </p>
         <Blogs />
       </div>
+      <Pagination />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Blogs from '../Components/Blogs';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Pagination from '../Components/Pagination';
 
 function Tag() {
   
@@ -17,6 +18,7 @@ function Tag() {
           <p>Blogs on <span>{tag}</span></p>
           <Blogs />
         </div>
+        <Pagination/>
       </div>
     );
 }
