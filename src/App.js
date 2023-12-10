@@ -39,7 +39,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blogPage/:blogid" element={<BlogPage />} />
+        <Route path="/blogPage/:blogId" element={<BlogPage />} />
         <Route path="/category/:category" element={<Category />} />
         <Route path="/tag/:tag" element={<Tag />} />
       </Routes>

@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from "react";
 import { createContext } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export const AppContext = createContext();
 
@@ -11,6 +12,7 @@ export default function AppContextProvider ({children}){
     const [blogs, setBlogs] = useState([]);
     const [page, setPage] =useState(1);
     const [totalPages, setTotalPages] = useState(null);
+    const navigate = useNavigate();
 
     async function fetchBlog (page, tag=null, category){
 
@@ -28,10 +30,6 @@ export default function AppContextProvider ({children}){
             setBlogs(response?.posts);
             setPage(response?.page);
             setTotalPages(response?.totalPages);
-
-            console.log(response);
-
-            
         } catch (error) {
             console.log("something went wrong sorry !")
         }
@@ -39,8 +37,9 @@ export default function AppContextProvider ({children}){
     };
 
     function changeHandler(page){
+        
+        navigate({search : `?page=${page}`});
         setPage(page);
-        fetchBlog(page);
     };
 
     const value = {

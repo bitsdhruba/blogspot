@@ -20,8 +20,8 @@ function BlogDetail({ blog }) {
       <div>
         {blog.tags.map((tag, index) => {
           return (
-            <Link to={`/tag/${tag.replaceAll(" " , "-")}`}>
-              <span key={index}>#{tag}</span>
+            <Link to={`/tag/${tag.replaceAll(" ", "-")}`} key={index}>
+              <span>#{tag}</span>
             </Link>
           );
         })}
